@@ -55,7 +55,6 @@ def display_inventory(inventory: dict[str, int]) -> None:
 
 
 def main() -> None:
-    """Build the inventory from sys.argv[1:] and report on it."""
     print("=== Inventory System Analysis ===")
     inventory = parse_inventory(sys.argv[1:])
     if len(inventory) == 0:

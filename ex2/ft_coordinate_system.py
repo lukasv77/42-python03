@@ -5,11 +5,11 @@ import math
 
 def get_player_pos() -> tuple[float, float, float]:
     while True:
-        input_parts = input("Enter new coordinates as floats in format "
-                            "'x,y,z': ").split(',')
-        if len(input_parts) != 3:
+        raw = input("Enter new coordinates as floats in format 'x,y,z': ")
+        if raw.count(',') != 2:
             print("Invalid syntax")
             continue
+        input_parts = raw.split(',')
         float_list = []
         try:
             for part in input_parts:
@@ -43,5 +43,5 @@ def main() -> None:
 if __name__ == "__main__":
     try:
         main()
-    except EOFError:
+    except (EOFError, KeyboardInterrupt):
         print()
